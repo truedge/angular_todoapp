@@ -24,9 +24,9 @@
   <table>
     <th>Title</th><th>Description</th><th>Date</th><th>Status</th>
     <tr *ngFor="let todo of restItems['data']['docs']" >
-        <td [innerHTML]="todo.title"></td>
+        <td >{{todo.title | uppercase }}</td>
         <td [innerHTML]="todo.description"></td>
-        <td [innerHTML]="todo.date"></td>
+        <td>{{todo.date | date:'fullDate' }}</td>
         <td [innerHTML]="todo.status"></td>
     </tr>
   </table>
