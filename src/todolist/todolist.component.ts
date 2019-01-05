@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+import { I18nSelectPipe } from '@angular/common';
+
 @Component({
   selector: 'app-root',
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  templateUrl: './todolist.component.html',
+  styleUrls: ['./todolist.component.css']
 })
-export class TodoComponent  implements OnInit {
+export class TodoListComponent  implements OnInit {
   title = 'To Do App';
 
   restItems: any;
@@ -17,7 +19,9 @@ export class TodoComponent  implements OnInit {
   constructor(private http: HttpClient) {}
   ngOnInit() {
     this.getRestItems();
+    setInterval(this.getRestItems2, 5000);
   }
+
 
   // Read all REST Items
   getRestItems(): void {
@@ -29,6 +33,18 @@ export class TodoComponent  implements OnInit {
         }
       )
   }
+
+    // Read all REST Items
+    getRestItems2(): void {
+      this.restItemsServiceGetRestItems()
+        .subscribe(
+          restItems => {
+            this.restItems = restItems;
+            console.log("testing: " + this.restItems);
+          }
+        )
+       
+    }
 
   // Rest Items Service: Read all REST Items
   restItemsServiceGetRestItems() {

@@ -1,12 +1,12 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { TodoModule } from './todo/todo.module';
+import { TodoListModule } from './todolist/todolist.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(TodoModule)
+platformBrowserDynamic().bootstrapModule(TodoListModule)
   .catch(err => console.log(err));

@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { TodoComponent } from './todo.component';
+import { TodoListComponent } from './todolist.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    TodoComponent
+    TodoListComponent
   ],
   imports: [
     HttpClientModule,
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [ 
   ],
-  bootstrap: [TodoComponent]
+  bootstrap: [TodoListComponent]
 })
-export class TodoModule { }
+export class TodoListModule { }
 
