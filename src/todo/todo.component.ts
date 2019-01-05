@@ -4,10 +4,10 @@ import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.css']
 })
-export class AppComponent  implements OnInit {
+export class TodoComponent  implements OnInit {
   title = 'To Do App';
 
   restItems: any;
